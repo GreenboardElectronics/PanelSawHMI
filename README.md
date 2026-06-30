@@ -1,6 +1,6 @@
-# Panel Saw Raspberry Pi HMI v2.2
+# Panel Saw Raspberry Pi HMI v3.0
 
-Industrial dashboard style update based on the requested reference screen.
+Professional Greenboard Electronics Panel Saw HMI.
 
 Target:
 - Raspberry Pi 3B+
@@ -8,20 +8,22 @@ Target:
 - Raspberry Pi OS with X11
 - PySide6
 
-New in v2.2:
-- Professional industrial dashboard layout
-- Left vertical navigation with icons
-- Top status bar with AUTO/READY/date-time
-- Three large axis readout cards
-- Machine mimic area
-- Machine status panel
-- Quick jog panel
-- Bottom status bar
-- Manual, Auto, Diagnostics, Alarms, Programs, Settings pages
-- Simulator mode retained for development
+Version 3.0 adds:
+- Operator / Technician / Engineer style screen structure
+- Home dashboard similar to commercial industrial panel saw HMIs
+- Programs page
+- Maintenance page
+- I/O Monitor page
+- Service Settings page
+- Machine configuration file
+- Alarm history starter
+- Simulator controller backend
+- Prepared communication abstraction for future RS-485/dsPIC controller
 
 Run:
 
     cd ~/PanelSawHMI
+    git pull
     source venv/bin/activate
+    pip install -r requirements.txt
     python3 -m hmi.main --simulate
