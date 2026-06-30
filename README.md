@@ -1,10 +1,24 @@
-# Panel Saw Raspberry Pi HMI v2.0
+# Panel Saw Raspberry Pi HMI v2.1
 
-Industrial touchscreen HMI for Raspberry Pi + 7 inch HDMI display.
+Fresh Version 2.1 build for Raspberry Pi 3B+ and 7 inch HDMI touchscreen.
 
-Run:
-    ./run_hmi.sh
+Features:
+- 1024x600 touchscreen layout
+- Dark industrial theme
+- Large navigation buttons
+- Home dashboard
+- Manual jog screen
+- Auto position screen
+- Diagnostics screen
+- Alarm screen
+- Settings screen
+- Simulator mode
+- Ready for RS-485/dsPIC integration later
 
-Or if dependencies are already installed:
+Run on Raspberry Pi:
+
+    cd ~/panelsawHMI/panel_saw_rpi_hmi_v2_1
+    python3 -m venv venv
     source venv/bin/activate
-    python3 -m hmi.main --simulate
+    pip install -r requirements.txt
+    ./run_hmi.sh
