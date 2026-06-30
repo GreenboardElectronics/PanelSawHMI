@@ -1,36 +1,46 @@
 {
-  "machine_name": "SCM Panel Saw Retrofit",
+  "machine_name": "Panel Saw Retrofit",
   "brand": "Greenboard Electronics",
-  "hmi_version": "3.0",
+  "version": "3.1-production",
+  "display": {
+    "width": 1024,
+    "height": 600,
+    "fullscreen": true
+  },
+  "communication": {
+    "backend": "simulate",
+    "serial_port": "/dev/ttyUSB0",
+    "baudrate": 115200
+  },
+  "safety": {
+    "require_estop_ok": true,
+    "require_guard_closed": true,
+    "require_vacuum_ok": true
+  },
   "axes": {
     "fence": {
-      "name": "Fence X",
+      "axis_id": 0,
+      "label": "Fence Position",
       "unit": "mm",
       "min": 0,
       "max": 3200,
-      "home_position": 0,
       "jog_speed": 50
     },
-    "blade_height": {
-      "name": "Blade Height",
+    "height": {
+      "axis_id": 1,
+      "label": "Blade Height",
       "unit": "mm",
       "min": 0,
       "max": 120,
-      "home_position": 0,
       "jog_speed": 10
     },
-    "blade_tilt": {
-      "name": "Blade Tilt",
-      "unit": "deg",
+    "tilt": {
+      "axis_id": 2,
+      "label": "Blade Tilt",
+      "unit": "\u00b0",
       "min": 45,
       "max": 90,
-      "home_position": 90,
       "jog_speed": 5
     }
-  },
-  "communication": {
-    "mode": "simulate",
-    "port": "/dev/ttyUSB0",
-    "baudrate": 115200
   }
 }
