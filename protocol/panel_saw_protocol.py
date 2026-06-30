@@ -44,18 +44,25 @@ def pkt_reset_alarm():
 @dataclass
 class MachineStatus:
     state: str = "READY"
-    mode: str = "MANUAL"
+    mode: str = "AUTO"
+    cycle: str = "IDLE"
+    program: str = "None"
+    operator: str = "Operator"
+    runtime: str = "00:15:42"
+
     estop_ok: bool = True
-    guard_closed: bool = True
-    servo_power: bool = True
+    blade_guard_closed: bool = True
+    rear_guard_closed: bool = True
     vacuum_ok: bool = True
+    io_ok: bool = True
+    sd_ok: bool = True
     rs485_ok: bool = True
-    saw_running: bool = False
+    controller_count: int = 4
 
     fence_mm: float = 1250.25
     fence_target: float = 1250.00
-    height_mm: float = 72.0
-    height_target: float = 75.0
+    height_mm: float = 78.2
+    height_target: float = 78.0
     tilt_deg: float = 90.0
     tilt_target: float = 90.0
 
@@ -90,6 +97,7 @@ class Simulator:
 
         elif cmd == CMD_STOP:
             self.status.state = "STOPPED"
+            self.status.cycle = "STOPPED"
 
         elif cmd == CMD_HOME:
             self.status.fence_mm = 0.0
@@ -103,3 +111,4 @@ class Simulator:
         elif cmd == CMD_RESET_ALARM:
             self.status.alarm = ""
             self.status.state = "READY"
+            self.status.cycle = "IDLE"

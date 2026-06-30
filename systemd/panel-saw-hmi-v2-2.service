@@ -1,0 +1,14 @@
+[Unit]
+Description=Panel Saw HMI v2.2
+After=graphical.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/PanelSawHMI
+ExecStart=/home/pi/PanelSawHMI/venv/bin/python3 -m hmi.main --simulate
+Restart=always
+User=pi
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=graphical.target

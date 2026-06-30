@@ -1,18 +1,19 @@
-# Install Panel Saw HMI v2.1 on Raspberry Pi
+# Install Panel Saw HMI v2.2 on Raspberry Pi
 
-1. Copy panel_saw_rpi_hmi_v2_1.zip to /home/pi/panelsawHMI/
-2. Extract it.
-3. Open terminal:
+If cloned from GitHub:
 
-cd ~/panelsawHMI/panel_saw_rpi_hmi_v2_1
+cd ~/PanelSawHMI
+git pull
+source venv/bin/activate
+pip install -r requirements.txt
+python3 -m hmi.main --simulate
+
+If using the ZIP:
+
+1. Extract panel_saw_rpi_hmi_v2_2.zip.
+2. Open terminal in the extracted folder:
+
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-chmod +x run_hmi.sh
-./run_hmi.sh
-
-To run again later:
-
-cd ~/panelsawHMI/panel_saw_rpi_hmi_v2_1
-source venv/bin/activate
-./run_hmi.sh
+python3 -m hmi.main --simulate
