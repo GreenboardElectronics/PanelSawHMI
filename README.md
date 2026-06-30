@@ -24,3 +24,20 @@ source venv/bin/activate
 pip install -r requirements.txt
 python3 -m hmi.main --simulate
 ```
+
+
+## One-command update and run
+
+Install the shortcut once:
+
+```bash
+cd ~/PanelSawHMI
+chmod +x update_and_run.sh install_shortcut.sh run_hmi.sh
+./install_shortcut.sh
+```
+
+Then run from anywhere:
+
+```bash
+~/update_and_run.sh
+```
